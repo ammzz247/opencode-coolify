@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  opencode:
+    build: .
+    container_name: opencode-server
+    ports:
+      - "4096:4096"
+    environment:
+      - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD}
+    networks:
+      - coolify
+    restart: unless-stopped
+
+networks:
+  coolify:
+    external: true
