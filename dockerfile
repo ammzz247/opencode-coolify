@@ -31,7 +31,7 @@ ENV PATH=/home/opencode/.opencode/bin:$PATH
 EXPOSE 4096
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-  CMD wget -qO- http://opencode:4096/health || exit 1
+  CMD wget -qO- http://localhost:4096/health || exit 1
 
 # Start OpenCode server
 CMD ["opencode", "serve", "--port", "4096", "--hostname", "0.0.0.0"]
