@@ -3,7 +3,7 @@ services:
     build: .
     container_name: opencode-server
     ports:
-      - '127.0.0.1:4096:4096'
+      - '4096:4096'
     environment:
       - 'OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD}'
     volumes:
